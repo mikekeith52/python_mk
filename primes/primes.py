@@ -9,7 +9,7 @@ def print_primes():
 		to speed this up, only test the divisibility of each number against a set of known prime numbers
 		when you learn that a number is prime, append it to the list and continue on through each iteration
 		prints all primes between 1 and 10,000 in .5 secs on my laptop
-		between 1 and 100,000 in 30 secs
+		between 1 and 100,000 in 23.8 secs
 	"""
 	global known_primes
 	initial_primes = known_primes.copy()
