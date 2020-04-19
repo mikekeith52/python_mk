@@ -3,13 +3,13 @@ from sklearn.linear_model import LogisticRegression
 
 
 def rfe(X,y,model_type="logistic",keep='auto',print_support=True,print_rankings=False):
-	""" recursive feature elimination
-		from the sklearn documentation: 
-		Given an external estimator that assigns weights to features (e.g., the coefficients of a linear model), the goal of recursive feature elimination (RFE) is to select features by recursively considering smaller and smaller sets of features.
-		First, the estimator is trained on the initial set of features and the importance of each feature is obtained either through a coef_ attribute or through a feature_importances_ attribute. 
-		Then, the least important features are pruned from current set of features. That procedure is recursively repeated on the pruned set until the desired number of features to select is eventually reached.
-		X and y should be your predictors and dependent variable in pandas dataframe format.
-	    Returns the reduced set of columns to use in your model.
+    """ recursive feature elimination
+        from the sklearn documentation: 
+	Given an external estimator that assigns weights to features (e.g., the coefficients of a linear model), the goal of recursive feature elimination (RFE) is to select features by recursively considering smaller and smaller sets of features.
+	First, the estimator is trained on the initial set of features and the importance of each feature is obtained either through a coef_ attribute or through a feature_importances_ attribute. 
+	Then, the least important features are pruned from current set of features. That procedure is recursively repeated on the pruned set until the desired number of features to select is eventually reached.
+	X and y should be your predictors and dependent variable in pandas dataframe format.
+	Returns the reduced set of columns to use in your model.
         model_type supports the following values: 'logistic' or 'linear'
         keep will take 'auto' or a positive integer value -- if an integer, this will return the top however many predictors that are best according to RFE
     """
