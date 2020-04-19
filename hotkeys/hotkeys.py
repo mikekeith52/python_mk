@@ -8,7 +8,7 @@ def main():
 
     go = True
     while go:
-        shortkey = input('select a shortkey')
+        shortkey = input('select a HotKey : ')
         if shortkey.lower() == 'stop':
             go = False
         else:
