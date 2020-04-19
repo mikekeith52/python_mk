@@ -1,6 +1,6 @@
 # Winning the Lottery with Python
 
-This was completed when I was learning Python and demonstrates understanding of scripting and base Python object handling.  
+This was completed when I was learning Python.  
 
 This is my attempt to guess winning numbers for the lottery. This particular lottery is played in Brazil ("Lotomania") and has simple rules:
   1. Each player picks 50 integers between 00 and 99
