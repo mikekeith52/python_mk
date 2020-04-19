@@ -1,6 +1,6 @@
 # Winning the Lottery with Python
 
-This was completed when I was learning Python and demonstrates understanding of scripting and base Python object handling.  
+This was completed when I was first learning Python.  
 
 This is my attempt to guess winning numbers for the lottery. This particular lottery is played in Brazil ("Lotomania") and has simple rules:
   1. Each player picks 50 integers between 00 and 99
@@ -10,13 +10,13 @@ This is my attempt to guess winning numbers for the lottery. This particular lot
 I wrote a script in Python that simulates this lottery 10,000 times with 20 'winning' numbers drawn at random, which I reference to as a "winning vector" as well as the same number of "winning draws" of 50 numbers that include all 20 winning numbers, as well as an additional 30 random numbers, from each simulated game.
 
 # Randomness
-Because I assumed this is all random, I don't think any solution drawn here will guarantee a win. In fact, this fares no better than just selecting any 50 numbers at random. In short, this project is **just for fun**. 
+Because I assumed this is all random, I don't think any solution drawn here will guarantee a win. In fact, this fares no better than just selecting any 50 numbers at random. In short, this project is **just for fun**.  
 
 # Historical data
-If I had a large selection of historical winning vectors, I could test the assumption that numbers are really being drawn at random. If I found that they were not, I could construct a simulation method to mirror the nature of the non-random draws, whatever that was. But, I only had access to 13 past winning vectors, and didn't believe I could do much with so few historical data points.
+If I had a large selection of historical winning vectors, I could test the assumption that numbers are really being drawn at random. If I found that they were not, I could construct a simulation method to mirror the nature of the non-random draws, whatever that was.  
 
-# Python version
-I first ran this script on a Jupyter notebook, Python version 3.4.5. I've since upgraded to 3.7.1. Below is the output from the initial run--subsequent updates have changed the solutions.
+# Requirements
+Python 3
 
 # Testing validity of solution
 Since the script iterates through so many simulations to come up with an answer, I thought it important to test that the solution worked. To do that, I wrote this function that returns errors if the winning solution had something wrong -- e.g. incorrect vector size, elements in an incorrect format (float instead of int), numbers that were too big or too small, etc. And this function adapts to different lottery rules.
