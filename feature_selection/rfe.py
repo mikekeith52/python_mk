@@ -1,7 +1,6 @@
 from sklearn.feature_selection import RFE
 from sklearn.linear_model import LogisticRegression
 
-
 def rfe(X,y,model_type="logistic",keep='auto',print_support=True,print_rankings=False):
     """ recursive feature elimination
         from the sklearn documentation: 
@@ -38,7 +37,7 @@ def rfe(X,y,model_type="logistic",keep='auto',print_support=True,print_rankings=
     if keep == 'auto':
         rfe_cols = [X.columns[i] if e for i,e in enumerate(rfe.support_)]
     elif isinstance(keep,int) & (keep > 0):
-        rfe_cols = X.columns[:keep].to_list()
+        rfe_cols = [X.columns[i] if e <= keep for i,e in enumerate(rfe.ranking_)]
     else:
         raise TypeError('keep must be "auto" or a positive integer')
 
