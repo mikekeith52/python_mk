@@ -1,6 +1,6 @@
 
 known_primes=[1,2]
-N = 100000
+N = 10000
 
 def print_primes():
 	""" prints all prime numbers between 1 and global N
