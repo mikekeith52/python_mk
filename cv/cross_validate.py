@@ -7,18 +7,14 @@ hyper_params = {
     'max_samples':[0.5,.99]
 }
 
-def wrapper(X_train,y_train):
+def wrapper(X_train,y_train,cv=3):
 
     # expand grid to get all possible combos
     def expand_grid(dictionary):
         """ takes a dictionary of lists, and expands out arrays into a pandas dataframe
         """
         return pd.DataFrame([row for row in product(*dictionary.values())], 
-                           columns=dictionary.keys())
-    grid = expand_grid(hyper_params)
-
-    # view result shape
-    print(grid.shape)
+                           columns=dictionary.keys()
 
     # create cross validate function
     def cross_validate_rf(X_train,y_train,k=3,grid=grid,loss='gini'):
@@ -51,3 +47,6 @@ def wrapper(X_train,y_train):
         min_error = hyper_grid['total_error'].min()
         # return the row with the lowest error metric as well as the full set of results
         return hyper_grid.loc[hyper_grid['total_error'] == min_error], hyper_grid
+        
+    grid = expand_grid(hyper_params)
+    cross_validate(X_train,y_train,k=cv,grid=grid,loss='gini')
