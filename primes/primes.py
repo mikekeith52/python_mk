@@ -10,6 +10,7 @@ def print_primes():
 		when you learn that a number is prime, append it to the list and continue on through each iteration
 		prints all primes between 1 and 10,000 in .3 secs on my laptop
 		between 1 and 100,000 in 4.1 secs
+		between 1 and a 1,000,000 in about 8.5 minutes
 	"""
 	global known_primes
 	initial_primes = known_primes.copy()
@@ -29,7 +30,7 @@ def print_primes():
 			i = 0
 			for e in known_primes: 
 				if self % e == 0:
-					i +=1 
+					i += 1 
 				if i == 2: # every number is divisible by 1
 					return False
 			return True
