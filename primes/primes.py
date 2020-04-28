@@ -1,6 +1,6 @@
 
 known_primes=[1,2]
-N = 1000000
+N = 100000
 
 def print_primes():
 	""" prints all prime numbers between 1 and global N
@@ -28,10 +28,8 @@ def print_primes():
 			    breaks loop as soon as an evenly divisible number, other than 1, is found
 			"""
 			i = 0
-			for e in known_primes: 
+			for e in known_primes[1:]: 
 				if self % e == 0:
-					i += 1 
-				if i == 2: # every number is divisible by 1
 					return False
 			return True
 		def isKnownPrime(self):
