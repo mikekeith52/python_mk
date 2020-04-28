@@ -7,7 +7,12 @@ import sys
 import os
 import configparser
 
-def format(indices,ignore_sheets='Sheet1'):
+def format(file,indices='auto'):
+    def format_3x2(ignore_sheets='Sheet1'):
+        pass
+
+    def format_2x2(ignore_sheets='Sheet1'):
+        pass
 
     config = configparser.ConfigParser()
     config.read('excel_style_formats.ini')
