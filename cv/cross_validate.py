@@ -49,4 +49,4 @@ def wrapper(X_train,y_train,cv=3):
         return hyper_grid.loc[hyper_grid['total_error'] == min_error], hyper_grid
         
     grid = expand_grid(hyper_params)
-    cross_validate(X_train,y_train,k=cv,grid=grid,loss='gini')
+    cross_validate_rf(X_train,y_train,k=cv,grid=grid,loss='gini')
