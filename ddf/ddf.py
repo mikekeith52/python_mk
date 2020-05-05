@@ -1,3 +1,6 @@
+import pandas as pd
+import numpy as np
+from sklearn.neighbors import KNeighborsClassifier
 
 class ddf(pd.core.frame.DataFrame):
     """ pandas dataframe with two extra methods
