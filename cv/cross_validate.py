@@ -1,3 +1,9 @@
+import pandas as pd
+import numpy as np
+import tqdm
+from itertools import product
+from sklearn.ensemble import RandomForestClassifier
+
 # Random Forest Classifier
 hyper_params = {
     'max_depth':[10,20],
