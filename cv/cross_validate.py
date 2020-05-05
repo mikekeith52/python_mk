@@ -4,7 +4,8 @@ import tqdm
 from itertools import product
 from sklearn.ensemble import RandomForestClassifier
 
-# Random Forest Classifier
+# Random Forest Classifier - keys are hyperparemeters to tune, values are lists of values to test
+# the bigger you make this, the longer it will take to train
 hyper_params = {
     'max_depth':[10,20],
     'n_estimators':[100,500,1000],
