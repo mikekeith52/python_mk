@@ -1,5 +1,5 @@
 
-known_primes=[1,2]
+known_primes=[2]
 N = 100000
 
 def print_primes():
@@ -25,10 +25,10 @@ def print_primes():
 		def isNextPrime(self):
 			""" meant to check the next prime number after the set of known prime numbers
 			    example: when checking 5, it only checks divisibility against 1,2,3 not 4
-			    breaks loop as soon as an evenly divisible number, other than 1, is found
+			    breaks loop as soon as an evenly divisible number by some other prime is found
 			"""
 			i = 0
-			for e in known_primes[1:]: 
+			for e in known_primes: 
 				if self % e == 0:
 					return False
 			return True
