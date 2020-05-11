@@ -19,8 +19,8 @@ def print_primes():
 		def __init__(self,known_primes):
 			self.known_primes = known_primes
 		def no_negatives(self):
-			if self < 1:
-				raise TypeError('positive integers value 1 or greater only please')
+			if self < 2:
+				raise TypeError('positive integers value 2 or greater only please')
 			return self
 		def isNextPrime(self):
 			""" meant to check the next prime number after the set of known prime numbers
