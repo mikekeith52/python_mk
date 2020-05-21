@@ -1,1 +1,1 @@
-Automate repetitive typing by placing comments in the config.ini file and running main.py from the command line. You can add brackets in your comment and you will be asked to replace each bracketed phrase before it is copied to your clipboard.  
+Automate repetitive typing by placing comments in the hotkeys.ini file and running main.py from the command line. You can add brackets in your comment and you will be asked to replace each bracketed phrase before it is copied to your clipboard.  
