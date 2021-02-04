@@ -1,3 +1,5 @@
+import numpy as np
+
 class Ensemble:
     def __init__(self,_models_):
         """ _models_ : a list of fitted sklearn model objects
