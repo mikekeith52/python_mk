@@ -9,6 +9,3 @@ def upsample(X_train,y_train):
 	os = SMOTE(random_state=20)
 	# upsample
 	return os.fit_sample(X_train, y_train)
-
-if __name__ == '__main__':
-	upsample()

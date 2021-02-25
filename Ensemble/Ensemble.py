@@ -1,15 +1,21 @@
 import numpy as np
 
 class Ensemble:
-    def __init__(self,_models_):
-        """ _models_ : a list of fitted sklearn model objects
+    """ averages results from several sklearn models
+    """
+    def __init__(self,models):
+        """ models : a list of fitted sklearn model objects
         """
-        self.models = _models_
+        self.models = models
         
-    def fit(self,X,y):
+    def fit(self,X,y,refit=True):
         """ placeholder for eli5
         """
-        pass
+        if refit:
+            for m in self.models:
+                m.fit(X,y)
+        else:
+            pass
         
     def score(self,X,y):
         scores = []
@@ -18,12 +24,16 @@ class Ensemble:
         return np.array(scores).mean(axis=0)
             
     def predict_proba(self,X):
-        self.predp = []
+        predp0 = []
+        predp1 = []
         for m in self.models:
-            self.predp.append(list(m.predict_proba(X)[:,1]))
-        self.predp = np.array(self.predp).mean(axis=0)
+            predp0.append(list(m.predict_proba(X)[:,0]))
+            predp1.append(list(m.predict_proba(X)[:,1]))
+        predp0 = np.array(predp0).mean(axis=0)
+        predp1 = np.array(predp1).mean(axis=0)
+        self.predp = np.array([[p0,p1] for p0,p1 in zip(predp0,predp1)])
         return self.predp
     
-    def predict(self,X,cutoff=.5):
+    def predict(self,X):
         self.predict_proba(X)
-        return np.where(self.predp >= cutoff,1,0)
+        return self.predp[:,1].round()
